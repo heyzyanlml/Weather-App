@@ -135,7 +135,7 @@ searchInput.addEventListener("keyup", (e) => {
 
 // Set up the weather request with an specific city
 const setupWeatherRequest = (cityName) => {
-  const api_Url = `http://api.weatherapi.com/v1/forecast.json?key=${api_Key}&q=${cityName}&days=2`;
+  const api_Url = `https://api.weatherapi.com/v1/forecast.json?key=${api_Key}&q=${cityName}&days=2`;
   getWeatherDetails(api_Url);
 };
 
@@ -144,7 +144,7 @@ locationButton.addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const { latitude, longitude } = position.coords;
-      const api_Url = `http://api.weatherapi.com/v1/forecast.json?key=${api_Key}&q=${latitude},${longitude}&days=2`;
+      const api_Url = `https://api.weatherapi.com/v1/forecast.json?key=${api_Key}&q=${latitude},${longitude}&days=2`;
       getWeatherDetails(api_Url);
     },
     (error) => {
